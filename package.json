@@ -1,0 +1,29 @@
+{
+  "name": "smart_house_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app:start:dev": "node ./dist/app.js",
+    "start": "rimraf dist && npm run lint &&  tsc-watch --outDir ./dist --onSuccess \"npm run app:start:dev\" --onFailure \"'echo Compilation Failed'\"",
+    "build": "rimraf dist && tsc",
+    "tsc": "rimraf dist && npm run lint && tsc --watch",
+    "lint": "eslint --fix --ext .ts,.js src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.40.0"
+  },
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.40.2",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "rimraf": "^3.0.2",
+    "tsc-watch": "^4.1.0",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  }
+}
